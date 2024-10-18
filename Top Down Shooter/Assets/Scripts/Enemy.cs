@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    [SerializeField] Transform player;
     [SerializeField] float enemySpeed;
     Rigidbody2D rb;
+    GameObject player;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
     {
         if (player != null)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
+            Vector2 direction = (player.transform.position - transform.position).normalized;
             rb.MovePosition(rb.position + direction * enemySpeed * Time.fixedDeltaTime);
         }
     }

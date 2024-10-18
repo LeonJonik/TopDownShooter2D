@@ -10,7 +10,7 @@ public class PlayerDamage : MonoBehaviour
 
     void DisableInvincibility()
     {
-        invincible = true;
+        invincible = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
