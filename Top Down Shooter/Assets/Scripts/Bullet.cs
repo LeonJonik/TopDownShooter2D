@@ -10,9 +10,11 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
-        }
+        } 
 
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Gun")){
+            Destroy(gameObject);
+        }
     }
     private void OnBecameInvisible()
     {
